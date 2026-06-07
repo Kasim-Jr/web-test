@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CodeKids - An interactive educational platform for teaching programming to children through fun, gamified lessons.">
+  <meta name="theme-color" content="#4A90D9">
+  <title>CodeKids - Learn Programming the Fun Way!</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">CodeKids <span class="hero-title-accent">— Learn Programming the Fun Way!</span></h1>
+      <p class="hero-subtitle">🚀 Ready to build your own games, websites, and apps? Start your coding adventure today and become a super coder!</p>
+      <button id="cta-button" class="cta-button pulse-animation">
+        <span class="cta-icon">🎮</span> Start Learning
+      </button>
+    </div>
+
+    <!-- Floating code symbols -->
+    <div class="floating-symbols">
+      <span class="floating-symbol" data-speed="0.8">{ }</span>
+      <span class="floating-symbol" data-speed="1.2">< ></span>
+      <span class="floating-symbol" data-speed="0.6">//</span>
+      <span class="floating-symbol" data-speed="1.0">&&</span>
+      <span class="floating-symbol" data-speed="0.9">[ ]</span>
+      <span class="floating-symbol" data-speed="1.1">= =</span>
+      <span class="floating-symbol" data-speed="0.7">if()</span>
+      <span class="floating-symbol" data-speed="1.3">fn</span>
+    </div>
+  </section>
+
+  <!-- ===== LESSONS SECTION ===== -->
+  <section id="lessons" class="lessons-section">
+    <h2 class="section-title">🌟 Choose Your Coding Adventure 🌟</h2>
+    <p class="section-subtitle">Pick a track and start your journey! Each adventure teaches you something new.</p>
+
+    <div class="lessons-grid">
+
+      <!-- Card 1: HTML Basics -->
+      <div class="lesson-card" data-track="html-basics" tabindex="0" role="button" aria-label="Start HTML Basics lesson">
+        <div class="card-color-strip html-strip"></div>
+        <div class="card-icon">🌐</div>
+        <h3 class="card-title">HTML Basics</h3>
+        <p class="card-description">Build your very own web pages from scratch! Learn how to create headings, paragraphs, and links.</p>
+        <div class="card-difficulty">
+          <span class="difficulty-label">Difficulty:</span>
+          <span class="star-rating" aria-label="2 out of 5 stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </span>
+        </div>
+        <div class="card-progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">0% complete</span>
+        </div>
+        <button class="card-start-button">🚀 Start</button>
+      </div>
+
+      <!-- Card 2: CSS Styling -->
+      <div class="lesson-card" data-track="css-styling" tabindex="0" role="button" aria-label="Start CSS Styling lesson">
+        <div class="card-color-strip css-strip"></div>
+        <div class="card-icon">🎨</div>
+        <h3 class="card-title">CSS Styling</h3>
+        <p class="card-description">Make things pretty with colors, fonts, and animations! Turn plain pages into masterpieces.</p>
+        <div class="card-difficulty">
+          <span class="difficulty-label">Difficulty:</span>
+          <span class="star-rating" aria-label="2 out of 5 stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </span>
+        </div>
+        <div class="card-progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">0% complete</span>
+        </div>
+        <button class="card-start-button">🎨 Start</button>
+      </div>
+
+      <!-- Card 3: JavaScript Fun -->
+      <div class="lesson-card" data-track="javascript-fun" tabindex="0" role="button" aria-label="Start JavaScript Fun lesson">
+        <div class="card-color-strip js-strip"></div>
+        <div class="card-icon">⚡</div>
+        <h3 class="card-title">JavaScript Fun</h3>
+        <p class="card-description">Make things interactive and alive! Add buttons that work, pop-ups, and cool effects.</p>
+        <div class="card-difficulty">
+          <span class="difficulty-label">Difficulty:</span>
+          <span class="star-rating" aria-label="3 out of 5 stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </span>
+        </div>
+        <div class="card-progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">0% complete</span>
+        </div>
+        <button class="card-start-button">⚡ Start</button>
+      </div>
+
+      <!-- Card 4: Python Adventures -->
+      <div class="lesson-card" data-track="python-adventures" tabindex="0" role="button" aria-label="Start Python Adventures lesson">
+        <div class="card-color-strip python-strip"></div>
+        <div class="card-icon">🐍</div>
+        <h3 class="card-title">Python Adventures</h3>
+        <p class="card-description">Create your own games and stories! Python is a friendly language perfect for beginners.</p>
+        <div class="card-difficulty">
+          <span class="difficulty-label">Difficulty:</span>
+          <span class="star-rating" aria-label="3 out of 5 stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </span>
+        </div>
+        <div class="card-progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">0% complete</span>
+        </div>
+        <button class="card-start-button">🐍 Start</button>
+      </div>
+
+      <!-- Card 5: Scratch Blocks -->
+      <div class="lesson-card" data-track="scratch-blocks" tabindex="0" role="button" aria-label="Start Scratch Blocks lesson">
+        <div class="card-color-strip scratch-strip"></div>
+        <div class="card-icon">🧩</div>
+        <h3 class="card-title">Scratch Blocks</h3>
+        <p class="card-description">Drag and drop blocks to create programs! No typing needed — just snap pieces together.</p>
+        <div class="card-difficulty">
+          <span class="difficulty-label">Difficulty:</span>
+          <span class="star-rating" aria-label="1 out of 5 stars">
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+          </span>
+        </div>
+        <div class="card-progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">0% complete</span>
+        </div>
+        <button class="card-start-button">🧩 Start</button>
+      </div>
+
+      <!-- Card 6: Data Detective -->
+      <div class="lesson-card" data-track="data-detective" tabindex="0" role="button" aria-label="Start Data Detective lesson">
+        <div class="card-color-strip data-strip"></div>
+        <div class="card-icon">🔍</div>
+        <h3 class="card-title">Data Detective</h3>
+        <p class="card-description">Solve mysteries using data! Learn to sort, filter, and find patterns like a real detective.</p>
+        <div class="card-difficulty">
+          <span class="difficulty-label">Difficulty:</span>
+          <span class="star-rating" aria-label="4 out of 5 stars">
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star filled">★</span>
+            <span class="star">★</span>
+          </span>
+        </div>
+        <div class="card-progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text">0% complete</span>
+        </div>
+        <button class="card-start-button">🔍 Start</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CODE PLAYGROUND SECTION ===== -->
+  <section id="playground" class="playground-section">
+    <h2 class="section-title">💻 Try Your Code! 💻</h2>
+    <p class="section-subtitle">Write your code below and see what happens! Don't worry about mistakes — that's how we learn!</p>
+
+    <div class="playground-container">
+      <!-- Example snippet buttons -->
+      <div class="snippet-buttons">
+        <span class="snippet-label">Try an example:</span>
+        <button class="snippet-button" data-snippet="hello-world">👋 Hello World</button>
+        <button class="snippet-button" data-snippet="math-magic">🔢 Math Magic</button>
+        <button class="snippet-button" data-snippet="loop-fun">🔄 Loop Fun</button>
+        <button class="snippet-button" data-snippet="string-art">✨ String Art</button>
+        <button class="snippet-button" data-snippet="conditionals">🤔 Conditionals</button>
+      </div>
+
+      <!-- Code editor -->
+      <div class="code-editor-wrapper">
+        <div class="code-editor-header">
+          <span class="editor-dot red-dot"></span>
+          <span class="editor-dot yellow-dot"></span>
+          <span class="editor-dot green-dot"></span>
+          <span class="editor-title">CodeKids Editor</span>
+          <span class="typing-cursor-animation">|</span>
+        </div>
+        <textarea id="code-editor" class="code-editor" spellcheck="false" aria-label="Code editor area - write your JavaScript code here" placeholder="// Write your code here! 🎉&#10;// Example: console.log("Hello!");"></textarea>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="playground-actions">
+        <button id="run-code-button" class="run-button bounce-hover">
+          <span class="run-icon">▶</span> Run Code
+        </button>
+        <button id="clear-code-button" class="clear-button">
+          <span class="clear-icon">🗑️</span> Clear
+        </button>
+      </div>
+
+      <!-- Output display -->
+      <div class="output-wrapper">
+        <div class="output-header">
+          <span class="output-title">📋 Output</span>
+        </div>
+        <div id="code-output" class="code-output" aria-live="polite" aria-label="Code output display area">
+          <span class="output-placeholder">Your code results will appear here! 🪄</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOGIN MODAL ===== -->
+  <div id="login-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-container modal-enter">
+      <button id="modal-close-button" class="modal-close-button" aria-label="Close login modal">✕</button>
+      <div class="modal-avatar">🦊</div>
+      <h2 id="modal-title" class="modal-title">Welcome Back, Coder!</h2>
+      <p class="modal-subtitle">Log in to save your progress and earn badges!</p>
+
+      <form id="login-form" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="login-username" class="form-label">👤 Username</label>
+          <input type="text" id="login-username" class="form-input" placeholder="Enter your cool username" required autocomplete="username" aria-required="true">
+          <span class="form-error" id="username-error" role="alert"></span>
+        </div>
+        <div class="form-group">
+          <label for="login-password" class="form-label">🔑 Password</label>
+          <input type="password" id="login-password" class="form-input" placeholder="Your secret password" required autocomplete="current-password" aria-required="true">
+          <span class="form-error" id="password-error" role="alert"></span>
+        </div>
+        <button type="submit" class="login-submit-button pulse-animation">
+          <span class="login-button-icon">🚀</span> Log In
+        </button>
+      </form>
+
+      <div class="modal-footer">
+        <p>New here? <a href="#" id="signup-link" class="signup-link">I'm new! Sign up 🌟</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== USER BAR (shown after login) ===== -->
+  <div id="user-bar" class="user-bar" hidden>
+    <div class="user-avatar" id="user-avatar">🦊</div>
+    <span class="user-name" id="user-name-display">Coder</span>
+    <button id="logout-button" class="logout-button">Logout 🚪</button>
+  </div>
+
+  <!-- ===== LOGIN BUTTON (shown when not logged in) ===== -->
+  <button id="login-button" class="login-button">🦊 Log In</button>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="footer-logo">🚀 CodeKids</span>
+        <p class="footer-tagline">Making coding fun for every kid!</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero" class="footer-link">Home</a>
+        <a href="#lessons" class="footer-link">Lessons</a>
+        <a href="#playground" class="footer-link">Playground</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 CodeKids. Built with ❤️ and ☕</p>
+    </div>
+  </footer>
+
+  <!-- Confetti container (for success animations) -->
+  <div id="confetti-container" class="confetti-container" aria-hidden="true"></div>
+
+  <!-- Main application script -->
+  <script src="app.js"></script>
+</body>
+</html>

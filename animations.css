@@ -1,0 +1,788 @@
+/* ============================================================
+   CodeKids - Animations Stylesheet
+   Dedicated CSS animations for the interactive educational platform
+   All animations use @keyframes and prioritize performance
+   (transform/opacity where possible)
+   ============================================================ */
+
+/* ----- Floating Animation (Hero Code Symbols) ----- */
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.25;
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-35px) rotate(-3deg);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translateY(-15px) rotate(4deg);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.25;
+  }
+}
+
+/* Extended float with more dramatic movement */
+@keyframes floatDramatic {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translateY(-40px) rotate(8deg) scale(1.1);
+  }
+  60% {
+    transform: translateY(-60px) rotate(-5deg) scale(0.95);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+}
+
+/* Gentle float for subtle background elements */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ----- Pulse Animation (CTA Buttons) ----- */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(231, 76, 60, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+  }
+  50% {
+    box-shadow: 0 6px 30px rgba(231, 76, 60, 0.6), 0 0 60px rgba(231, 76, 60, 0.2);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ----- Card Entrance Animations (Staggered Fade-in from Bottom) ----- */
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardEntranceSimple {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered entrance classes - each card gets a different delay */
+.lesson-card.card-animate-1 { animation: cardEntrance 0.6s ease-out 0.1s both; }
+.lesson-card.card-animate-2 { animation: cardEntrance 0.6s ease-out 0.2s both; }
+.lesson-card.card-animate-3 { animation: cardEntrance 0.6s ease-out 0.3s both; }
+.lesson-card.card-animate-4 { animation: cardEntrance 0.6s ease-out 0.4s both; }
+.lesson-card.card-animate-5 { animation: cardEntrance 0.6s ease-out 0.5s both; }
+.lesson-card.card-animate-6 { animation: cardEntrance 0.6s ease-out 0.6s both; }
+
+/* ----- Sparkle / Twinkle Effects (Completed Items) ----- */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.sparkle-effect {
+  position: relative;
+}
+
+.sparkle-effect::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.2rem;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* ----- Shake Animation (Error States) ----- */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes shakeSmall {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
+}
+
+.shake-small-animation {
+  animation: shakeSmall 0.3s ease-in-out;
+}
+
+/* ----- Bounce Animation (Success Feedback) ----- */
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    transform: translateY(-30px) scale(1.1);
+  }
+  40% {
+    transform: translateY(0) scale(1);
+  }
+  60% {
+    transform: translateY(-15px) scale(1.05);
+  }
+  80% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(100%) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10%) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.bounce-animation {
+  animation: bounce 0.6s ease;
+}
+
+.bounce-in-animation {
+  animation: bounceIn 0.5s ease;
+}
+
+.bounce-hover:hover {
+  animation: bounce 0.6s ease;
+}
+
+/* ----- Slide-in Animations (Sections on Scroll) ----- */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section reveal classes */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ----- Modal Fade-in with Scale Animation ----- */
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+  }
+  60% {
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+  }
+}
+
+@keyframes overlayFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.modal-enter {
+  animation: modalFadeIn 0.4s ease both;
+}
+
+.modal-exit {
+  animation: modalFadeOut 0.3s ease both;
+}
+
+.modal-overlay-enter {
+  animation: overlayFadeIn 0.3s ease both;
+}
+
+.modal-overlay-exit {
+  animation: overlayFadeOut 0.3s ease both;
+}
+
+/* ----- Typing Cursor Animation (Code Editor) ----- */
+@keyframes blink-cursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Cursor blink applied via class in styles.css .typing-cursor-animation */
+
+/* ----- Rainbow Gradient Animation (Special Elements) ----- */
+@keyframes rainbowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes rainbowBorder {
+  0% {
+    border-color: #E74C3C;
+  }
+  16% {
+    border-color: #F39C12;
+  }
+  33% {
+    border-color: #2ECC71;
+  }
+  50% {
+    border-color: #4A90D9;
+  }
+  66% {
+    border-color: #9B59B6;
+  }
+  83% {
+    border-color: #E74C3C;
+  }
+  100% {
+    border-color: #E74C3C;
+  }
+}
+
+@keyframes rainbowText {
+  0% {
+    color: #E74C3C;
+  }
+  16% {
+    color: #F39C12;
+  }
+  33% {
+    color: #2ECC71;
+  }
+  50% {
+    color: #4A90D9;
+  }
+  66% {
+    color: #9B59B6;
+  }
+  83% {
+    color: #1ABC9C;
+  }
+  100% {
+    color: #E74C3C;
+  }
+}
+
+.rainbow-gradient {
+  background: linear-gradient(
+    90deg,
+    #E74C3C, #F39C12, #2ECC71, #4A90D9, #9B59B6, #1ABC9C, #E74C3C
+  );
+  background-size: 300% 100%;
+  animation: rainbowShift 4s linear infinite;
+}
+
+.rainbow-border {
+  border: 3px solid #E74C3C;
+  animation: rainbowBorder 3s linear infinite;
+}
+
+.rainbow-text {
+  animation: rainbowText 3s linear infinite;
+}
+
+/* ----- Confetti-like Burst Animation (Achievements) ----- */
+@keyframes confettiFall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(400px) rotate(720deg) scale(0.5);
+  }
+}
+
+@keyframes confettiBurst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--confetti-x), var(--confetti-y)) rotate(var(--confetti-rotation)) scale(0.3);
+  }
+}
+
+@keyframes confettiSpiral {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--confetti-x), var(--confetti-y)) rotate(1080deg);
+  }
+}
+
+/* Confetti piece styling */
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  animation: confettiBurst 1.5s ease-out forwards;
+}
+
+.confetti-piece.circle {
+  border-radius: 50%;
+}
+
+.confetti-piece.square {
+  border-radius: 2px;
+}
+
+.confetti-piece.star {
+  /* Star shape via clip-path */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  width: 14px;
+  height: 14px;
+}
+
+/* ----- Additional Fun Animations ----- */
+
+/* Pop animation for buttons on click */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pop-animation {
+  animation: pop 0.3s ease;
+}
+
+/* Wiggle animation for drawing attention */
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.wiggle-animation {
+  animation: wiggle 0.4s ease-in-out 3;
+}
+
+/* Glow animation for active elements */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(74, 144, 217, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(74, 144, 217, 0.6), 0 0 40px rgba(74, 144, 217, 0.3);
+  }
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Spin animation for loading states */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-animation {
+  animation: spin 1s linear infinite;
+}
+
+/* Fade-in animation (general purpose) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-animation {
+  animation: fadeIn 0.5s ease both;
+}
+
+/* Fade-out animation (general purpose) */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out-animation {
+  animation: fadeOut 0.3s ease both;
+}
+
+/* Scale-in animation */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-in-animation {
+  animation: scaleIn 0.3s ease both;
+}
+
+/* Progress bar fill animation */
+@keyframes progressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--progress-width, 0%);
+  }
+}
+
+.progress-fill-animated {
+  animation: progressFill 1s ease-out forwards;
+}
+
+/* Heartbeat animation for special highlights */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat-animation {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* ----- Animation Delay Utility Classes ----- */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-1000 { animation-delay: 1s; }
+
+/* ----- Animation Duration Utility Classes ----- */
+.duration-fast { animation-duration: 0.3s; }
+.duration-normal { animation-duration: 0.5s; }
+.duration-slow { animation-duration: 1s; }
+.duration-very-slow { animation-duration: 2s; }
+
+/* ----- Animation Fill Mode Utility Classes ----- */
+.fill-both { animation-fill-mode: both; }
+.fill-forwards { animation-fill-mode: forwards; }
+.fill-backwards { animation-fill-mode: backwards; }
+
+/* ============================================================
+   REDUCED MOTION - Accessibility
+   Respect users who prefer reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all animations for users who prefer reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Ensure elements are still visible (no opacity:0 from animation start states) */
+  .lesson-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .section-reveal,
+  .section-reveal-left,
+  .section-reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .floating-symbol {
+    animation: none !important;
+  }
+
+  .pulse-animation {
+    animation: none !important;
+  }
+
+  .confetti-piece {
+    animation: none !important;
+    display: none !important;
+  }
+
+  /* Keep only essential transitions for interaction feedback */
+  button {
+    transition: background-color 0.1s !important;
+  }
+
+  .modal-container {
+    animation: none !important;
+  }
+}
